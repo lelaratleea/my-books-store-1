@@ -3,41 +3,24 @@
 @section('title', $product['name'])
 
 @section('content')
-
-    <style>
-        dl {
-            display: grid;
-            grid-template-columns: auto 1fr;
-        }
-
-        dt {
-            display: flex;
-            flex-direction: row;
-            font-weight: bold;
-        }
-
-        dt::after {
-            content: '::';
-            padding-left: 1ch;
-            padding-right: 1ch;
-            margin-left: auto;
-        }
-    </style>
-
     <main>
         <div>
-            <img src="{{ asset("images/products/{$product['code']}.jpg") }}" alt="Picture of{{ $product['name'] }}" />
+            <img src="{{ asset("images/products/{$product['code']}.jpg") }}"
+                 alt="Picture of {{ $product['name'] }}" 
+                 style="width: 200px; margin-bottom: 20px;" />
         </div>
 
-        <dl>
-            <dt>Code</dt>
-            <dd><em>{{ $product['code'] }}</em></dd>
+        <div style="font-family: serif; margin-bottom: 10px;">
+            <strong>Code &nbsp;&nbsp;&nbsp;&nbsp;::</strong> {{ $product['code'] }} <br>
+            
+            <strong>Category ::</strong> 
+            <a href="{{ route('categories.view', ['category' => $product['catCode']]) }}">
+                <em style="color: blue;">{{ $categories[$product['catCode']]['name'] }}</em>
+            </a> <br>
+            
+            <strong>Name &nbsp;&nbsp;&nbsp;&nbsp;::</strong> {{ $product['name'] }}
+        </div>
 
-            <dt>Category</dt>
-            <dd><em style="color: blueviolet">{{ $product['catCode'] }}</em></dd>
-
-            <dt>Name</dt>
-            <dd>{{ $product['name'] }}</dd>
-        </dl>
+        <pre style="font-family: monospace; white-space: pre-wrap;">{{ $product['description'] }}</pre>
     </main>
 @endsection

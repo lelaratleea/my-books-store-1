@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,3 +15,12 @@ Route::controller(ProductController::class)
         Route::get('', 'list')->name('list');
         Route::get('/{product}', 'view')->name('view');
     });
+
+Route::controller(CategoryController::class)
+    ->prefix('/categories') 
+    ->name('categories.') 
+    ->group(static function (): void {
+        Route::get('', 'list')->name('list');
+        Route::get('/{category}', 'view')->name('view'); 
+    });
+
