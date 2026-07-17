@@ -1,14 +1,9 @@
-@extends('layouts.main')
-
-@section('title', $category['name'])
+@extends('layouts.main' , [
+    'title' => $product['name'],
+])
 
 @section('content')
-    <style>
-        table { border-collapse: collapse; }
-        table, th, td { border: 1px solid black; }
-        .app-cl-product-image { width: 64px; }
-    </style>
-    <main>
+    <main id="app-main-content">
         <table>
             <caption>Products List for {{ $category['name'] }}</caption>
             <thead>

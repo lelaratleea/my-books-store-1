@@ -1,14 +1,10 @@
-@extends('layouts.main')
-
-@section('title', 'Categories')
+@extends('layouts.main', [
+    'title' => 'Products',
+])
 
 @section('content')
-    <style>
-        table { border-collapse: collapse; }
-        table, th, td { border: 1px solid black; }
-    </style>
-    <main>
-        <table>
+    <main id="app-main-content">
+        <table class="app-cmp-data-list">
             <caption>Categories List</caption>
             <thead>
                 <tr>

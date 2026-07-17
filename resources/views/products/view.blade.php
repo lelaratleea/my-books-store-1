@@ -1,26 +1,25 @@
-@extends('layouts.main')
+@extends('layouts.main' , [
+    'title' => $product['name'],
+])
 
-@section('title', $product['name'])
 
 @section('content')
-    <main>
+    <main id="app-main-content">
         <div>
             <img src="{{ asset("images/products/{$product['code']}.jpg") }}"
-                 alt="Picture of {{ $product['name'] }}" 
-                 style="width: 200px; margin-bottom: 20px;" />
+                 alt="Picture of {{ $product['name'] }}" >
         </div>
 
-        <div style="font-family: serif; margin-bottom: 10px;">
-            <strong>Code &nbsp;&nbsp;&nbsp;&nbsp;::</strong> {{ $product['code'] }} <br>
+        <dl class="app-cmp-data-detail">
+            <dt>Code</dt>
+            <dd><em>{{ $product['code'] }}</em></dd>
             
-            <strong>Category ::</strong> 
-            <a href="{{ route('categories.view', ['category' => $product['catCode']]) }}">
-                <em style="color: blue;">{{ $categories[$product['catCode']]['name'] }}</em>
-            </a> <br>
-            
-            <strong>Name &nbsp;&nbsp;&nbsp;&nbsp;::</strong> {{ $product['name'] }}
-        </div>
+            <dt>Category</dt>
+            <dd><em style="color: blue;">{{ $product['catCode'] }}</em></dd>
 
-        <pre style="font-family: monospace; white-space: pre-wrap;">{{ $product['description'] }}</pre>
+            <dt>Name</dt>
+            <dd>{{ $product['name']}}</dd>
+            
+        </dl>
     </main>
 @endsection
