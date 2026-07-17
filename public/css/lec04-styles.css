@@ -182,3 +182,117 @@ dl.app-cmp-data-detail {
         width: 64px;
     }
 }
+
+/* ===== Lab 04: เพิ่มเติม ไม่แก้ของเดิม ===== */
+
+/* Product code: ตัวหนา, เอียง, สีเขียว */
+.app-product-code {
+    font-weight: bold;
+    font-style: italic;
+    color: green;
+}
+
+/* Category code / name: ตัวหนา, เอียง, สีส้ม */
+.app-category-name {
+    font-weight: bold;
+    font-style: italic;
+    color: orange;
+}
+
+/* ลิงก์ทั่วไป (ไม่ใช่ nav) ขีดเส้นใต้ตอน hover */
+a:hover {
+    text-decoration: underline;
+}
+
+/* ปุ่ม nav ไม่ต้องขีดเส้นใต้ตอน hover */
+.app-cmp-links li a:hover {
+    text-decoration: none;
+}
+
+/* รูปภาพสินค้าอยู่กึ่งกลางในหน้า view */
+.app-product-image {
+    text-align: center;
+}
+
+/* รายละเอียดสินค้าชิดซ้าย */
+.app-cmp-data-detail {
+    text-align: left;
+}
+
+/* ===== Lab 04: เพิ่มเติม (ต่อจากครั้งก่อน) ===== */
+
+/* บังคับสไตล์ให้ code เขียวแม้จะอยู่ใน <a> (ลิงก์) */
+a .app-product-code,
+a.app-product-code {
+    color: green;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+}
+
+a .app-category-name,
+a.app-category-name {
+    color: orange;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+}
+
+/* ตารางมีเส้นขอบ */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th,
+table td {
+    border: 1px solid #999;
+    padding: 6px 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+/* ===== Lab 04: ฟอนต์คำบรรยายสินค้า ===== */
+.app-product-desc {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-line;
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+
+/* ===== Lab 04: แก้ underline ของลิงก์ code/category ในตาราง ===== */
+.app-cmp-data-list a {
+    text-decoration: none !important;
+}
+
+.app-cmp-data-list a:hover {
+    text-decoration: underline !important;
+}
+
+/* ===== Lab 04: แก้ underline ไม่ขึ้นตอน hover เพราะ em ลูกบัง ===== */
+.app-cmp-data-list a:hover .app-product-code,
+.app-cmp-data-list a:hover .app-category-name {
+    text-decoration: underline !important;
+}
+
+a.app-product-code:hover {
+    color: green;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+a.app-category-name:hover {
+    color: orange;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+a{
+    text-decoration: none;
+}

@@ -19,10 +19,10 @@
                         <th>{{ $loop->iteration }}</th>
                         <td>
                             <a href="{{ route('categories.view', ['category' => $category['code']]) }}">
-                                <em>{{ $category['code'] }}</em>
+                                <em class="app-category-name">{{ $category['code'] }}</em>
                             </a>
                         </td>
-                        <td>{{ $category['name'] }}</td>
+<td><em class="app-category-name">{{ $category['name'] }}</em></td>
                     </tr>
                 @endforeach
             </tbody>

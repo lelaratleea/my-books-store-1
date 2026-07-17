@@ -1,11 +1,12 @@
 @extends('layouts.main' , [
-    'title' => $product['name'],
+    'title' => $category['name'],
+    'titleClasses' =>['app-category-name'],
 ])
 
 @section('content')
     <main id="app-main-content">
         <table>
-            <caption>Products List for {{ $category['name'] }}</caption>
+    <p>Products List for <em class="app-category-name">{{ $category['name'] }}</em></p>            
             <thead>
                 <tr>
                     <th>No.</th>
@@ -23,7 +24,7 @@
                                 alt="Picture of {{ $product['name'] }}" class="app-cl-product-image" />
                         </td>
                         <td>
-                            <a href="{{ route('products.view', ['product' => $product['code']]) }}">
+                            <a class="app-product-code" href="{{ route('products.view', ['product' => $product['code']]) }}">
                                 <em>{{ $product['code'] }}</em>
                             </a>
                         </td>

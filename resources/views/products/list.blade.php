@@ -25,13 +25,13 @@
                                 alt="Picture of {{ $product['name'] }}" class="app-cl-product-image" />
                         </td>
                         <td>
-                            <a href="{{ route('products.view', ['product' => $product['code']]) }}">
-                                <em>{{ $product['code'] }}</em>
+                            <a href="{{ route('products.view', $product['code']) }}">
+                            <em class="app-product-code">{{ $product['code'] }}</em>
                             </a>
                         </td>
                         <td>
                             <a href="{{ route('categories.view', ['category' => $product['catCode']]) }}">
-                                <em>{{ $categories[$product['catCode']]['name'] }}</em>
+                                <em class="app-category-name">{{ $categories[$product['catCode']]['name'] }}</em>
                             </a>
                         </td>
                         <td>{{ $product['name'] }}</td>
